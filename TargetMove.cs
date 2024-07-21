@@ -10,7 +10,7 @@ public class TargetMove : MonoBehaviour
     private int _placePointIndex = 0;
     private Transform _nextPlace;
 
-    void Start()
+    private void Start()
     {
         _places = new List<Transform>();
         
@@ -22,14 +22,15 @@ public class TargetMove : MonoBehaviour
         _nextPlace = _places[_placePointIndex];
     }
 
-    public void Update()
+    private void Update()
     {
         if (transform.position == _nextPlace.position)
             NextPoint();
 
         transform.position = Vector3.MoveTowards(transform.position, _nextPlace.position, _speed * Time.deltaTime);
     }
-    public void NextPoint()
+
+    private void NextPoint()
     {
         _placePointIndex = ++_placePointIndex % _places.Count;
 

@@ -13,7 +13,7 @@ public class BulletShoter : MonoBehaviour
 
     public ObjectPool<Bullet> Pool { get; private set; }
 
-    void Start()
+    private void Start()
     {
         Pool = new ObjectPool<Bullet>(CreateObject);
 
